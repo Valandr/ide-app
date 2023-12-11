@@ -1,0 +1,24 @@
+import { useDispatch, useSelector } from "react-redux";
+import { togglePreview } from "../features/preview";
+import showView from "../assets/view.svg";
+import hideView from "../assets/hide.svg";
+
+const PreviewButton = () => {
+  const previewData = useSelector((state) => state.preview);
+  const dispatch = useDispatch();
+
+  return (
+    <button
+      onClick={() => dispatch(togglePreview())}
+      className="py-2 px-4 rounded bg-blue-700 flex mx-auto items-center text-left text-slate-50"
+    >
+      <img
+        className="w-5 mr-3"
+        src={previewData.preview ? hideView : showView}
+      />
+      <span>{previewData.preview ? "Hide" : "Show"}</span>
+    </button>
+  );
+};
+
+export default PreviewButton;
