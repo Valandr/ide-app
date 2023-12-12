@@ -31,7 +31,7 @@ const initialState = [
     id: 3,
     lang: "js",
     imgURL: js,
-    buttonContent: "JS",
+    buttonContent: "JAVASCRIPT",
     code: `console.log("Hello World");`,
   },
 ];
